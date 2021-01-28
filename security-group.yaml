@@ -1,0 +1,35 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Security Group
+
+Parameters:
+
+  VpcId:
+    Type: AWS::EC2::VPC::Id
+
+  DeployRule:
+    Type: Number
+
+Conditions:
+  DeployRule: !Equals
+    - !Ref DeployRule
+    - 1
+
+Resources:
+
+  SecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupName: test-group
+      GroupDescription: Test Group
+      VpcId: !Ref VpcId
+
+  Rule:
+    Type: AWS::EC2::SecurityGroupIngress
+    Condition: DeployRule
+    Properties:
+      IpProtocol: tcp
+      FromPort: 80
+      ToPort: 80
+      CidrIp: 0.0.0.0/0
+      GroupId: !Ref SecurityGroup
+

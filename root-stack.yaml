@@ -1,0 +1,30 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Root
+
+Parameters:
+
+  DeployRule:
+    Type: Number
+    AllowedValues:
+      - 0
+      - 1
+
+Resources:
+
+  VpcStack:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: ./vpc.yaml
+
+  SecurityGroupStack:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: ./security-group.yaml
+      Parameters:
+        VpcId: !GetAtt
+          - VpcStack
+          - Outputs.VpcId
+        DeployRule: !Ref DeployRule
+
+
+
