@@ -2,7 +2,7 @@
 
 Around the time of re:Invent 2020, AWS introduced a new feature to generate changesets across a group of nested stacks. This was of particular interest to me as at the time I was working at an organisation that has a lot of nested stacks.
 
-However, when I fist tried it out, I came across a nasty bug which I duly reported via the organsiation's enterprise support plan. This repo contains the CloudFormation submitted to AWS support that reproduces this bug. The bug was acknowledged and a fix estimate given for March 2021.
+However, when I first tried it out, I came across a nasty bug which I duly reported via the organsiation's enterprise support plan. This repo contains the CloudFormation submitted to AWS support that reproduces this bug. The bug was acknowledged and a fix estimate given for March 2021.
 
 If you would like to see for yourself whether or not the bug is fixed, give this a go!
 
