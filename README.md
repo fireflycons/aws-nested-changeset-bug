@@ -31,7 +31,7 @@ due to a perceived change in VpcId
 
 ## Reproduction using PSCloudFormation
 
-If you have my [PSCloudFormation](https://github.com/fireflycons/PSCloudFormation), it is super-simple to deploy this stack
+If you have my [PSCloudFormation](https://github.com/fireflycons/PSCloudFormation) (v4.1.6.6 or higher), it is super-simple to deploy this stack
 
 ```powershell
 New-PSCFNStack -StackName nested-changeset-bug -TemplateLocation .\root-stack.yaml -DeployRule 0
