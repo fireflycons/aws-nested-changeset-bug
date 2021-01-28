@@ -28,3 +28,12 @@ security group is NOT replaced.
 Imagine my surprise when I tried this on a stack with a dozen nested stacks, each with many resources depending on the VpcId
 from a VPC stack that was unchanged. I saw 100+ resources across these stacks that were all claiming that they needed REPLACEMENT
 due to a perceived change in VpcId
+
+## Reproduction using PSCloudFormation
+
+If you have my [PSCloudFormation](https://github.com/fireflycons/PSCloudFormation), it is super-simple to deploy this stack
+
+```powershell
+New-PSCFNStack -StackName nested-changeset-bug -TemplateLocation .\root-stack.yaml -DeployRule 0
+New-PSCFNChangeSet -StackName nested-changeset-bug -UsePreviousTemplate -IncludeNestedStacks -ShowInBrowser -DeployRule 1
+```
