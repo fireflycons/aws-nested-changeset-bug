@@ -4,6 +4,8 @@ Around the time of re:Invent 2020, AWS introduced a new feature to generate chan
 
 However, when I first tried it out, I came across a nasty bug which I duly reported via the organsiation's enterprise support plan. This repo contains the CloudFormation submitted to AWS support that reproduces this bug. The bug was acknowledged and a fix estimate given for March 2021.
 
+Update: July 2021. This bug is still not fixed. Come on guys!
+
 If you would like to see for yourself whether or not the bug is fixed, give this a go!
 
 ## Steps to Reproduce
